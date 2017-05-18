@@ -21,9 +21,9 @@
 module.exports = function(robot) {
   //  YOUR CODE HERE
   //  Example
-  //  robot.hear(/javascript/i, function(msg) {
-  //    return msg.send("I love JavaScript!");
-  //  });
+    robot.hear(/randyhill/i, function(msg) {
+      return msg.send("You speak of the Randy...Isn't he awesome!");
+    });
 }
 
 /************************************
