@@ -21,13 +21,26 @@
 module.exports = function(robot) {
   //  YOUR CODE HERE
   //  Example
-    robot.hear(/randyhill/i, function(msg) {
+      robot.hear(/randy/i, function(msg) {
       return msg.send("You speak of the Randy...Isn't he awesome!");
     });
 
-    robot.respond(/tictactoe/, function(msg) {
-    return msg.send("Ok, Skynet is activated...");
+      robot.respond(/tictactoe/, function(msg) {
+      msg.send("     |     |     ");
+      msg.send("     |     |     ");
+      msg.send("-----------------");
+      msg.send("     |     |     ");
+      msg.send("     |     |     ");
+      msg.send("-----------------");
+      msg.send("     |     |     ");
+      msg.send("     |     |     ");
+      return msg.send("Ok, Skynet is activated...");
  });
+}
+
+function drawhash() {
+
+
 }
 
 /************************************
