@@ -24,6 +24,10 @@ module.exports = function(robot) {
     robot.hear(/randyhill/i, function(msg) {
       return msg.send("You speak of the Randy...Isn't he awesome!");
     });
+
+    robot.respond(/tictactoe/, function(msg) {
+    return msg.send("Ok, Skynet is activated...");
+ });
 }
 
 /************************************
