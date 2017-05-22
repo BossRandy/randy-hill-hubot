@@ -19,16 +19,56 @@
 //
 
 module.exports = function(robot) {
-  //  YOUR CODE HERE
-  //  Example
-  //    robot.hear(/randy/i, function(msg) {
-  //    return msg.send("You speak of the Randy...Isn't he awesome!");
-  //  });
+
+      //*******************
+      // Respond to text in any window.
+      //*******************
+      robot.hear(/how do you feel/i, function(msg) {
+
+      var feelings = [];
+      feelings.push("I feel dandy, thanks for asking");
+      feelings.push("I've had a rough day, but hanging in there");
+      feelings.push("You got any spare change?");
+      feelings.push("I'm feeling hungry");
+      feelings.push("I'm feeling sleepy");
+      feelings.push("I feel great dude!");
+      feelings.push("Ask me later how I feel");
+      feelings.push("I'm excited to be a healthy robot");
+      feelings.push("I could use a coffee");
+
+      var d = new Date();
+
+      var temp = "";
+      if (d.getDate() === 6 && (d.getMonth()+1) === 11)
+        temp = "It's my Birthday!!!";
+
+      if (temp.length <= 0) {
+        temp = feelings[Math.floor(Math.random() * (feelings.length - 1))];
+      }
+
+      msg.send(temp);
+
+      return;
+    });
+
+      //*******************
+      // Private message reply only.
+      //*******************
       robot.respond(/randy/i, function(msg) {
-      return msg.send("You speak of the Randy...Isn't he awesome!");
+      msg.send("You speak of the Randy...Isn't he awesome!");
+      return;
     });
 
       robot.respond(/tictactoe/, function(msg) {
+
+      var gamecnt = robot.brain.get("tictactoe_count");
+      if (gamecnt === null)
+        gamecnt = 0;
+
+      gamecnt++;
+      robot.brain.set("tictactoe_count", gamecnt);
+      msg.send("tictactoe_count: " + gamecnt);
+
       msg.send("Ok, Skynet is activated...");
       msg.send("     |     |     ");
       msg.send("     |     |     ");
@@ -39,7 +79,7 @@ module.exports = function(robot) {
       msg.send("     |     |     ");
       msg.send("     |     |     ");
       msg.send("Your turn Human...");
-      return 
+      return;
  });
 }
 
