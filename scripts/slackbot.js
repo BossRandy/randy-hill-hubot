@@ -71,11 +71,11 @@ module.exports = function(robot) {
 
       msg.send("Left to right 1 - 9");
       msg.send("Your turn Human...");
-      msg.send(".     |     |     ");
+      msg.send(".        |        |     ");
       msg.send(".-----------------");
-      msg.send(".     |     |     ");
+      msg.send(".        |        |     ");
       msg.send(".-----------------");
-      msg.send(".     |     |     ");
+      msg.send(".        |        |     ");
       msg.send("Ok, Skynet is activated...");
       
       return;
