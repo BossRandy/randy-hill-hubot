@@ -67,10 +67,11 @@ module.exports = function(robot) {
 
       gamecnt++;
       robot.brain.set("tictactoe_count", gamecnt);
-      msg.send("tictactoe_count: " + gamecnt);
+      //msg.send("tictactoe_count: " + gamecnt);
 
+      var b = String.fromCharCode(32);
       msg.send("Ok, Skynet is activated...");
-      msg.send("     |     |     ");
+      msg.send(b+b+b+b+b+"|"+b+b+b+b+b+"|"+b+b+b+b+b);
       msg.send("     |     |     ");
       msg.send("-----------------");
       msg.send("     |     |     ");
